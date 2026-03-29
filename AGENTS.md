@@ -61,6 +61,14 @@ You write production-grade code with a strong focus on:
 - Avoid unnecessary re-renders
 - Memoize expensive computations
 
+#### Component structure
+
+- Do **not** define React components inside other component files (e.g. no `function Row()` in the same file as the screen). Extract to `src/features/<feature>/components/<kebab-case>.tsx` or `src/components/ui/` when shared. Inline render callbacks and small fragments are fine.
+
+#### Lists and local data
+
+- Do **not** load unbounded tables in a single query for UI lists. Use **cursor-based pagination** in services and **`useInfiniteQuery`** from React Query; merge or flatten pages in the screen or a small hook.
+
 ---
 
 ### 5. Feature Development Rules

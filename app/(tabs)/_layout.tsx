@@ -1,35 +1,36 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs } from "expo-router";
+import React from "react";
+import { View } from "react-native";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { TabHeader } from "@/src/components/navigation/tab-header";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+    <View style={{ flex: 1 }}>
+      <TabHeader />
+      <View style={{ flex: 1 }}>
+        <Tabs
+          screenOptions={{
+            headerShown: false,
+            tabBarStyle: { display: "none" },
+          }}
+        >
+          <Tabs.Screen
+            name="transactions"
+            options={{ title: "Transactions" }}
+          />
+          <Tabs.Screen name="index" options={{ title: "Dashboard" }} />
+          <Tabs.Screen name="recurrings" options={{ title: "Recurrings" }} />
+          <Tabs.Screen name="accounts" options={{ title: "Accounts" }} />
+          <Tabs.Screen name="investments" options={{ title: "Investments" }} />
+          <Tabs.Screen name="savings" options={{ title: "Savings" }} />
+          <Tabs.Screen name="cashflow" options={{ title: "Cash Flow" }} />
+          <Tabs.Screen
+            name="budgets"
+            options={{ title: "Budgets", href: null }}
+          />
+        </Tabs>
+      </View>
+    </View>
   );
 }

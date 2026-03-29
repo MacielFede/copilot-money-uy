@@ -18,10 +18,28 @@ This project focuses on:
 - Recurring expenses
 - Savings goals
 - Budgets and spending insights
-- Cash flow visualization
-- Investment tracking
 
 The goal is to replicate the experience of a modern personal finance app where everything is **fast, visual, and easy to understand**.
+
+---
+
+## 🎥 Demo
+
+A demo video will be available at:
+
+```
+docs/demo
+```
+
+---
+
+## 📄 Plan
+
+The full development plan is available at:
+
+```
+docs/plan.md
+```
 
 ---
 
@@ -32,9 +50,9 @@ The goal is to replicate the experience of a modern personal finance app where e
 - pnpm
 - SQLite (expo-sqlite)
 - Drizzle ORM
-- React Query (for DB queries)
+- React Query (for async execution)
 - @shopify/flash-list (performance lists)
-- victory-native-xl (charts)
+- react-native-gifted-charts (charts)
 - Unistyles (theming)
 
 ---
@@ -89,27 +107,7 @@ The app uses a **feature-based architecture** with:
 
 ---
 
-## 🎥 Demo
-
-A demo video will be available at:
-
-```
-docs/demo
-```
-
----
-
-## 📄 Plan
-
-The full development plan is available at:
-
-```
-docs/plan.md
-```
-
----
-
-## 📚 Inspiration
+## Inspiration
 
 This project is inspired by Copilot Money:
 [https://www.copilot.money/](https://www.copilot.money/)
